@@ -1,0 +1,44 @@
+<% if(main.length !==0){ %>
+    <section class="container best-selections">
+        <div class="title">
+            <h1 class="mt-5">
+                <em>Best our menu</em>
+            </h1>
+        </div>
+        <% for(let food of main){ %>
+            <div class="best-selection-child col-12 <%= food.reverse  %> ">
+                <img src="/<%=  food.image  %>" class="col-xl-6 col-lg-6 " alt="" srcset="">
+                <div class="col-xl-6 col-lg-6 ">
+                    <h2><em>
+                            <%= food.englishName %>
+                        </em></h2>
+                    <p class="desc" style="font-size:25px;font-weight: 700;">
+                        <em>
+                            <%= food.desc %>
+                        </em>
+                        <br>
+                        <em class="arabic" style="font-size: 30px;">
+                            <%= food.descArabic %>
+                        </em>
+                    </p>
+                    <p class="price">price : <span>
+                            <%= food.price %>DHS
+                        </span></p>
+                    <form>
+                        <input type="hidden" value="<%= food._id  %>" name="id">
+                        <input type="hidden" value="<%= food.desc  %>" name="desc">
+                        <input type="hidden" value="<%= food.price  %>" name="price">
+                        <input type="hidden" value="<%= food.name  %>" name="name">
+                        <input type="hidden" value="<%= food.image  %>" name="image">
+                        <button type="submit" class="btn btn-dark add-cart" formaction="/add-cart/<%= food._id  %>"
+                            formmethod="post">Add cart</button>
+                        <% if(isAdmin){ %>
+                            <button type="submit" class="btn btn-danger add-cart mt-2"
+                                formaction="/delete-cart/<%= food._id  %>" formmethod="post">delete</button>
+                            <% } %>
+                    </form>
+                </div>
+            </div>
+            <% } %>
+    </section>
+    <% } %>

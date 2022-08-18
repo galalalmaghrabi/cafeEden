@@ -1,0 +1,42 @@
+<% if(popular.length !== 0 ){ %>
+    <div class="title">
+        <h1 class="mt-5">
+            <em>most popular</em>
+        </h1>
+    </div>
+    <section class="most-popular container ">
+        <% for(let food of popular){ %>
+            <div class="col-xl-4 col-lg-4 child">
+                <img src="/<%=  food.image  %>">
+                <div class="title">
+                    <h3><em>
+                            <%= food.englishName %>
+                        </em></h3>
+                    <p class="price">
+                        <span>
+                            <%= food.price %>
+                        </span> HDS
+                    </p>
+                </div>
+                <p class="desc">
+                    <em>
+                        <%= food.desc %>
+                    </em>
+                </p>
+                <form>
+                    <input type="hidden" value="<%= food._id  %>" name="id">
+                    <input type="hidden" value="<%= food.desc  %>" name="desc">
+                    <input type="hidden" value="<%= food.price  %>" name="price">
+                    <input type="hidden" value="<%= food.name  %>" name="name">
+                    <input type="hidden" value="<%= food.image  %>" name="image">
+                    <button type="submit" class="btn btn-dark add-cart" formaction="/add-cart/<%= food._id  %>"
+                        formmethod="post">Add cart</button>
+                    <% if(isAdmin){ %>
+                        <button type="submit" class="btn btn-danger add-cart mt-2"
+                            formaction="/delete-cart/<%= food._id  %>" formmethod="post">delete</button>
+                        <% } %>
+                </form>
+            </div>
+            <% } %>
+    </section>
+    <% } %>
