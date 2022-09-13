@@ -37,7 +37,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 const session = require('express-session')
 const sessionStore = require("connect-mongodb-session")(session)
 const store = new sessionStore({
-uri:'mongodb+srv://eden:eden@cluster0.bqfktxm.mongodb.net/eden?retryWrites=true&w=majority',
+uri:'mongodb+srv://galal:galal@cluster0.8dmfjeu.mongodb.net/?retryWrites=true&w=majority',
 collection:"sessions",
 })
 app.use(session({

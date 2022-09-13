@@ -21,14 +21,14 @@ exports.bookTable = (formMessage) => {
     let transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
-            user: 'edencoffeuae@gmail.com',
-            pass: 'wntsgyyuizopidod'
+            user: 'galalashraf102@gmail.com',
+            pass: 'wsfuocuuxbxbdsps'
         },
     });
     // send mail with defined transport object
         let info = transporter.sendMail({
-            from: `edencoffeuae@gmail.com`, // sender address
-            to: "edencoffeuae@gmail.com", // list of receivers
+            from: `galalashraf102@gmail.com`, // sender address
+            to: "galalashraf102@gmail.com", // list of receivers
             subject: "Book Table", // Subject line
             text: ``,
             html: `${messageHtml}`, // html body

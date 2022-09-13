@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const DB =
-'mongodb+srv://eden:eden@cluster0.bqfktxm.mongodb.net/eden?retryWrites=true&w=majority';
+'mongodb+srv://galal:galal@cluster0.8dmfjeu.mongodb.net/?retryWrites=true&w=majority';
 const cartSchema = mongoose.Schema({
   name: String,
   image: String,

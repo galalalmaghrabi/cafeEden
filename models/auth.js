@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
-const DB = 'mongodb+srv://eden:eden@cluster0.bqfktxm.mongodb.net/eden?retryWrites=true&w=majority'
+const DB = 'mongodb+srv://galal:galal@cluster0.8dmfjeu.mongodb.net/?retryWrites=true&w=majority'
 const { verify } = require('../controllers/nodemailer')
 
 const userSchema = mongoose.Schema({
